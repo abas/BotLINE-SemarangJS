@@ -25,8 +25,9 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 function handleEvent(event) {
   
-    if(){
-    
+    if(event.message.type){
+      const echo = { type:'sticker', stickerId:1, packageId:1 };
+      return client.replyMessage(event.replyToken, echo);
     }
     
   
