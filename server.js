@@ -24,6 +24,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
 });
 
 function handleEvent(event) {
+  
+    if(){
+    
+    }
     
   
     if(event.message.text.toLowerCase().includes("hai")){
