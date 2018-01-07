@@ -31,8 +31,13 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, echo);
     }
   
-    if(ve
-
+    if(event.message.text.toLowerCase().includes("sticker")){
+      const echo = { type:'sticker', stickerId:1, packageId:1 };
+      return client.replyMessage(event.replyToken, echo);
+    }
+  
+    
+  
     const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
     return client.replyMessage(event.replyToken, echo);
 }
