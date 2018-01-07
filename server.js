@@ -24,11 +24,14 @@ app.post('/callback', line.middleware(config), (req, res) => {
 });
 
 function handleEvent(event) {
+    
   
-    if(event.message.text == "hai"){
-      const echo = { type: 'text', text: "Halo juga :)·" };
+    if(event.message.text.toLowerCase().includes("hai")){
+      const echo = { type: 'text', text: "Halo juga :)" };
       return client.replyMessage(event.replyToken, echo);
     }
+  
+    if(ve
 
     const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
     return client.replyMessage(event.replyToken, echo);
