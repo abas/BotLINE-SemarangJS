@@ -23,13 +23,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 });
 
-function handleEvent(event) {
-  
-    if(event.message.type){
-      const echo = { type:'sticker', stickerId:1, packageId:1 };
-      return client.replyMessage(event.replyToken, echo);
-    }
-    
+function handleEvent(event) {    
   
     if(event.message.text.toLowerCase().includes("hai")){
       const echo = { type: 'text', text: "Halo juga :)" };
@@ -40,8 +34,6 @@ function handleEvent(event) {
       const echo = { type:'sticker', stickerId:1, packageId:1 };
       return client.replyMessage(event.replyToken, echo);
     }
-  
-    
   
     const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
     return client.replyMessage(event.replyToken, echo);
